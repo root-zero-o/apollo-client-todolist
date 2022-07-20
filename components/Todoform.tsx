@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { addTodo } from "../store/todo";
 
 const TodoForm = () => {
   const [input, setInput] = useState("");
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    addTodo(input);
+    alert("입력 완료!");
     setInput("");
   };
 
